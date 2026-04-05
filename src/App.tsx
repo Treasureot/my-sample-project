@@ -14,14 +14,14 @@ function App() {
     dateOfBirth: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const {name, value} = e.target;
     console.log(name, value);
     setFormData((preValue) => ({...preValue, [name]: value}));
     console.log(formData);
   };
 
-  const handleSubmit = (e) => { 
+  const handleSubmit = (e: any) => { 
     e.preventDefault();
     console.log(e);
     // createUser(formData);
@@ -56,7 +56,7 @@ function App() {
         <h1>My Online Store</h1>
         <p>My Name</p>
 
-        <form onSubmit={handleSubmit}>
+        <form>
           <div className="div">
             <div className="form-group">
               <input type="text" name="firstName" placeholder="First Name" onChange={(e) => handleChange(e)} />
